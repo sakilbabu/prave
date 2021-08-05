@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(const MyApp());
 
 /// This is the main application widget.
@@ -20,20 +19,26 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+  List img = [
+          "assets/code.jpg",
+          "assets/her.jpg",
+          "assets/himu.jpg",
+          "assets/tas.jpg",
+        ];
 
 const List<Tab> tabs = <Tab>[
-  Tab(text: 'HOME'),
-  Tab(text: 'SETTINGS'),
+  Tab(text: 'POEMS'),
+  Tab(text: 'NOVELS'),
   Tab(text: 'PROFILE'),
 ];
-List<String> lis = ["Sam", "Dam", "Lam", "Kam"];
+List<String> lis = ["Harry Potter", "Himu", "Sheser Kobita", "Bishad sindhu"];
+List<String> wtr = ["J.K Rowling", "Humayun Ahmed", "Rabindranath Thagore", "Mir Mosarraf Hussain"];
 List<String> liss = [
   "Area of fight",
   "Area of peace",
   "Area of love",
   "Area of romance"
 ];
-
 
 /// This is the stateless widget that the main application instantiates.
 class MyStatelessWidget extends StatelessWidget {
@@ -79,9 +84,7 @@ class MyStatelessWidget extends StatelessWidget {
                       Icons.search,
                       size: 30,
                     ),
-                    onPressed: () {
-
-                    }),
+                    onPressed: () {}),
               ],
             ),
             body: TabBarView(
@@ -96,8 +99,7 @@ class MyStatelessWidget extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.0),
                                 image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://images.unsplash.com/photo-1627048679561-a9079cb4da1d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
+                                  image: AssetImage("assets/code.jpg"),
                                   fit: BoxFit.cover,
                                 ),
                               )),
@@ -141,7 +143,6 @@ class MyStatelessWidget extends StatelessWidget {
                                   fit: BoxFit.cover,
                                 ),
                               )),
-
                         ],
                         options: CarouselOptions(
                           height: 180.0,
@@ -158,11 +159,11 @@ class MyStatelessWidget extends StatelessWidget {
                       Card(
                         elevation: 4.0,
                         child: Padding(
-                          padding:  EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             children: <Widget>[
                               Container(
-                                width: MediaQuery.of(context).size.width ,
+                                width: MediaQuery.of(context).size.width,
                                 height:
                                     MediaQuery.of(context).size.width * 0.65,
                                 child: Image.network(
@@ -193,15 +194,15 @@ class MyStatelessWidget extends StatelessWidget {
                       Card(
                         elevation: 4.0,
                         child: Padding(
-                          padding:  EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             children: <Widget>[
                               Container(
-                                width: MediaQuery.of(context).size.width ,
+                                width: MediaQuery.of(context).size.width,
                                 height:
-                                MediaQuery.of(context).size.width * 0.65,
-                                child: Image.network(
-                                    "https://images.unsplash.com/photo-1627007778238-e555392e1661?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1OXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
+                                    MediaQuery.of(context).size.width * 0.65,
+                                child: Image.asset(
+                                    "assets/code.jpg"),
                               ),
                               SizedBox(
                                 height: 5,
@@ -228,13 +229,13 @@ class MyStatelessWidget extends StatelessWidget {
                       Card(
                         elevation: 4.0,
                         child: Padding(
-                          padding:  EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             children: <Widget>[
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.7,
                                 height:
-                                MediaQuery.of(context).size.width * 0.65,
+                                    MediaQuery.of(context).size.width * 0.65,
                                 child: Image.network(
                                     "https://images.unsplash.com/photo-1627007778238-e555392e1661?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1OXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
                               ),
@@ -263,32 +264,31 @@ class MyStatelessWidget extends StatelessWidget {
                       Card(
                         elevation: 4.0,
                         child: Padding(
-                          padding:  EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             children: <Widget>[
                               Container(
                                 height: 230,
-                                decoration: BoxDecoration( color: Colors.green,
-                                  borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(10)
-                                  )
-                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                        bottomRight: Radius.circular(10))),
                                 child: Stack(
                                   children: [
                                     Positioned(
                                         top: 80,
                                         bottom: 300,
                                         child: Container(
-                                          decoration: BoxDecoration( color: Colors.grey,
+                                          decoration: BoxDecoration(
+                                              color: Colors.grey,
                                               borderRadius: BorderRadius.only(
                                                   topRight: Radius.circular(50),
-                                                bottomLeft: Radius.circular(50)
-                                              )
-                                          ),
-                                    ))
+                                                  bottomLeft:
+                                                      Radius.circular(50))),
+                                        ))
                                   ],
                                 ),
-                               ),
+                              ),
                             ],
                           ),
                         ),
@@ -306,38 +306,36 @@ class MyStatelessWidget extends StatelessWidget {
                           mainAxisSpacing: 4.0),
                       itemBuilder: (BuildContext context, int index) {
                         return Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          color: Colors.blue,
-                          elevation: 10,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              ListTile(
-                                leading: Icon(Icons.album, size: 20),
-                                title: Text(
-                                  lis[index],
-                                  style: TextStyle(fontSize: 12.0),
+                          elevation: 4.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  width: 150 ,
+                                  height: 150,
+                                  child:Image.asset(img[index])
                                 ),
-                                subtitle: Text(liss[index],
-                                    style: TextStyle(fontSize: 12.0)),
-                              ),
-                              ButtonBar(
-                                children: <Widget>[
-                                  FlatButton(
-                                    child: const Text('Edit',
-                                        style: TextStyle(color: Colors.white)),
-                                    onPressed: () {},
-                                  ),
-                                  FlatButton(
-                                    child: const Text('Delete',
-                                        style: TextStyle(color: Colors.white)),
-                                    onPressed: () {},
-                                  ),
-                                ],
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  lis[index],
+                                  style: TextStyle(
+                                      color: Colors.pinkAccent,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  wtr[index],
+                                  style: TextStyle(color: Colors.black),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       },
@@ -384,19 +382,16 @@ class MyStatelessWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        FlatButton(
+                        TextButton(
                           onPressed: () {
                             //forgot password screen
                           },
-                          textColor: Colors.blue,
                           child: Text('Forgot Password'),
                         ),
                         Container(
                             height: 50,
                             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                            child: RaisedButton(
-                              textColor: Colors.white,
-                              color: Colors.blue,
+                            child: ElevatedButton(
                               child: Text('Login'),
                               onPressed: () {
                                 print(nameController.text);
@@ -412,14 +407,15 @@ class MyStatelessWidget extends StatelessWidget {
               items: [
                 BottomNavigationBarItem(
                   icon: new Icon(Icons.home),
-                  title: new Text('Home'),
+                  label:  'Writters',
                 ),
                 BottomNavigationBarItem(
-                  icon: new Icon(Icons.mail),
-                  title: new Text('Messages'),
+                  icon: new Icon(Icons.add),
+                  label:  'Upload',
                 ),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person), title: Text('Profile'))
+                    icon: Icon(Icons.person),
+                    label: 'About')
               ],
             ),
           );
@@ -438,8 +434,7 @@ class NewWidget extends StatelessWidget {
         child: Row(
       children: <Widget>[
         Text('Do not have account?'),
-        FlatButton(
-          textColor: Colors.blue,
+        TextButton(
           child: Text(
             'Sign up',
             style: TextStyle(fontSize: 20),
